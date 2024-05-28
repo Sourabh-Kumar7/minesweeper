@@ -66,7 +66,7 @@ class Board:
     def print_board(self, reveal_mines=False):
         for r in range(self.size):
             for c in range(self.size):
-                if (r, c) in self.revealed or reveal_mines and self.grid[r][c] == '*':
+                if (r, c) in self.revealed or (reveal_mines and self.grid[r][c] == '*'):
                     print(self.grid[r][c], end=' ')
                 elif (r, c) in self.flags:
                     print('F', end=' ')
